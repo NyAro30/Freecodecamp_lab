@@ -1,3 +1,17 @@
+#!/usr/bin/env python3
+
+# ########################################################################### #
+#   shebang: 1                                                                #
+#                                                          :::      ::::::::  #
+#   Caesar_cipher.py                                     :+:      :+:    :+:  #
+#                                                      +:+ +:+         +:+    #
+#   By: mny-aro- <mny-aro-@student.42antananarivo.   +#+  +:+       +#+       #
+#                                                  +#+#+#+#+#+   +#+          #
+#   Created: 2026/10/05 10:12:56 by mny-aro-            #+#    #+#            #
+#   Updated: 2026/10/05 10:12:56 by mny-aro-           ###   ########.fr      #
+#                                                                             #
+# ########################################################################### #
+
 
 def caesar(text, shift, encrypt=True):
 
@@ -11,16 +25,21 @@ def caesar(text, shift, encrypt=True):
 
     if not encrypt:
         shift = - shift
-    
+
     shifted_alphabet = alphabet[shift:] + alphabet[:shift]
-    translation_table = str.maketrans(alphabet + alphabet.upper(), shifted_alphabet + shifted_alphabet.upper())
+    translation_table = str.maketrans(alphabet + alphabet.upper(),
+                                      shifted_alphabet +
+                                      shifted_alphabet.upper())
     return text.translate(translation_table)
+
 
 def encrypt(text, shift):
     return caesar(text, shift)
-    
+
+
 def decrypt(text, shift):
     return caesar(text, shift, encrypt=False)
+
 
 encrypted_text = 'Pbhentr vf sbhaq va hayvxryl cynprf.'
 
