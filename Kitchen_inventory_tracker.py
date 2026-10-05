@@ -1,6 +1,22 @@
+#!/usr/bin/env python3
+
+# ########################################################################### #
+#   shebang: 1                                                                #
+#                                                          :::      ::::::::  #
+#   Kitchen_inventory_tracker.py                         :+:      :+:    :+:  #
+#                                                      +:+ +:+         +:+    #
+#   By: mny-aro- <mny-aro-@student.42antananarivo.   +#+  +:+       +#+       #
+#                                                  +#+#+#+#+#+   +#+          #
+#   Created: 2026/10/05 10:15:37 by mny-aro-            #+#    #+#            #
+#   Updated: 2026/10/05 10:15:37 by mny-aro-           ###   ########.fr      #
+#                                                                             #
+# ########################################################################### #
+
+
 available_eggs = 1
 available_flour = 2
 available_sugar = 3
+
 
 def check_kitchen_stock():
     total_items = available_eggs + available_flour + available_sugar
@@ -9,7 +25,9 @@ def check_kitchen_stock():
     print(f'- {available_flour} flour')
     print(f'- {available_sugar} sugar')
 
+
 check_kitchen_stock()
+
 
 def use_eggs(available_eggs, eggs_to_use):
     if eggs_to_use > available_eggs:
@@ -19,8 +37,10 @@ def use_eggs(available_eggs, eggs_to_use):
     print(f'{eggs_to_use} egg(s) used out of {available_eggs} available.')
     return available_eggs - eggs_to_use
 
+
 use_eggs(available_eggs, 1)
 print(available_eggs)
+
 
 def make_fried_egg(available_eggs):
     has_enough_eggs = available_eggs >= 1
@@ -32,6 +52,7 @@ def make_fried_egg(available_eggs):
         print('Could not make a fried egg. Not enough eggs!')
 
     return available_eggs
+
 
 available_eggs = make_fried_egg(available_eggs)
 
